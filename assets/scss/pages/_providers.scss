@@ -1,0 +1,37 @@
+@use '../utils' as *;
+/* ------- Providers ------- */
+.providers {
+  .provider {
+    & + .provider {
+      margin-top: 100px;
+    }
+    
+    &-text {
+      padding-top: 57px;
+
+      .tra-title {
+        padding-bottom: 0;
+        text-align: left;
+
+        span {
+          margin-left: 0;
+        }
+      }
+
+      p {
+        margin-bottom: 37px;
+      }
+
+      .btn-brand-outline {
+        margin-bottom: 32px;
+      }
+    }
+
+    &-image {
+      img {
+        max-width: 90%;
+        height: auto;
+      }
+    }
+  }
+}

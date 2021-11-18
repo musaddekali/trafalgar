@@ -1,0 +1,56 @@
+@use '../utils' as *;
+/* ------- Articles ------- */
+.articles {
+  background: url("../images/bg-1.png") no-repeat center right/40%;
+  .article-box {
+    background: $white;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+
+    .image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .text {
+      padding: 24px 30px 35px;
+
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 25px;
+      }
+
+      a {
+        font-size: 16px;
+        line-height: 1.75;
+        text-decoration: none;
+        color: #4089ed;
+        @include transition;
+
+        &:hover {
+          color: lighten($secondary, 5);
+        }
+
+        &:hover > svg {
+          transform: translateX(4px) scale(1.2);
+        }
+
+        > svg {
+          margin-left: 8px;
+          @include transition;
+        }
+      }
+    }
+  }
+}

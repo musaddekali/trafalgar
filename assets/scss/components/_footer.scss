@@ -1,0 +1,68 @@
+@use '../utils' as *;
+/* ------- Footer ------- */
+.footer {
+    background: $footer-bg;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+
+    &-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 16px;
+        @include breakpoint-down('md') {
+            grid-template-columns:1fr 1fr;
+        }   
+        @include breakpoint-down('sm') {
+            grid-template-columns:1fr;
+        }   
+    }
+
+    &-info {
+        margin-bottom: 30px;
+
+        p {
+            margin: 18px 0 30px;
+        }
+
+        .copyright {
+            margin: 0;
+        }
+    }
+
+    &-links {
+        margin-bottom: 30px;
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            padding-bottom: 12px;
+            color: $white;
+            position: relative;
+        }
+
+        ul {
+            li {
+                padding: 10px 0;
+                line-height: 1;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+            }
+            
+            a{
+                line-height: 1;
+                @include transition;
+
+                &:hover {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

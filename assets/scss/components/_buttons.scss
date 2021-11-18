@@ -1,0 +1,43 @@
+@use '../utils' as *;
+
+ %custom-btn {
+    padding: 16px 40px;
+    line-height: 1;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    @include transition;
+    font-size: 1rem;
+    font-weight: 700;
+ }
+
+.btn-brand {
+    @extend %custom-btn;
+}
+
+.btn-brand-fill {
+    @extend %custom-btn;
+    background: $secondary;
+    color: $white;
+
+    &:hover {
+        color: #fff;
+        background: lighten($secondary, 5)
+    }
+}
+
+.btn-brand-outline {
+    @extend %custom-btn;
+    background: $white;
+    color: $secondary;
+    border: 1px solid $secondary;
+
+    &:hover {
+        background-color: $secondary;
+        color: $white;
+    }
+}

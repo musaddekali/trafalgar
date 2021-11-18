@@ -1,0 +1,55 @@
+@use '../utils' as *;
+/* ------- Services ------- */
+.services {
+  background: url('../images/bg-2.png') no-repeat center left/50%;
+
+  .service {
+    padding: 62px 52px 47px 36px;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+    margin-bottom: 37px;
+    background: $white;
+    color: $primary;
+    text-decoration: none;
+    @include breakpoint-down("md") {
+      text-align: center;
+    }
+
+    &:hover .icon img {
+        transform: scale(1.1);
+    }
+
+    &:hover h4 {
+        color: $secondary;
+    }
+
+    .icon {
+      margin-bottom: 25px;
+      width: 60px;
+      height: 60px;
+      @include breakpoint-down("md") {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+        @include transition;
+      }
+    }
+
+    h4 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      @include transition;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}

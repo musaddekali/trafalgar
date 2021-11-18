@@ -1,0 +1,27 @@
+// Colors
+$primary: #7d7987;
+$secondary: #458ff6;
+$accent: #1f1534;
+$white: #ffffff;
+$dark: #000000;
+$testimonials-bg: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+$footer-bg: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+
+// grid breakpoints
+$breakpoints-up: (
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+) !default;
+
+$breakpoints-down: (
+  "xs": 575px,
+  "sm": 767px,
+  "md": 991px,
+  "lg": 1199px,
+) !default;
+
+
+// z-indexs
+$z-hamburger : 9999;
+$z-mobile-nav : 9998;

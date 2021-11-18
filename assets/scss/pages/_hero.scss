@@ -1,0 +1,58 @@
+@use '../utils' as *;
+
+/* ------- Hero ------- */
+.hero {
+  padding-top: 170px;
+
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+
+    @include breakpoint-down('md') {
+        flex-wrap: wrap;
+    }
+  }
+
+  &-text {
+    margin-top: 100px;
+    flex: 1;
+
+    @include breakpoint-down("md") {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 25px;
+      @include breakpoint-down("md") {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 45px;
+    }
+  }
+
+  &-image {
+    text-align: right;
+    @include breakpoint-down("md") {
+      text-align: center;
+    }
+
+    .image {
+      img {
+        max-width: 80%;
+        @include breakpoint-down("md") {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

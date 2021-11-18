@@ -1,0 +1,17 @@
+@use '../utils' as *;
+/* Fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   color: $dark;
+}
+
+ul, ol {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}

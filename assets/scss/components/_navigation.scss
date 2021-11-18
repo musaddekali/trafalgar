@@ -1,0 +1,138 @@
+@use '../utils' as *;
+
+/* ------- Navigation ------- */
+/* Desktop Nav  */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-menu-hamburger {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    z-index: $z-hamburger;
+    cursor: pointer;
+
+    %hamb-row {
+      width: 28px;
+      height: 3px;
+      display: inline-block;
+      background: rgb(27, 27, 34);
+      position: absolute;
+    }
+
+    span {
+      @extend %hamb-row;
+      top: 12.5px;
+      @include transition;
+
+      &::before {
+        content: "";
+        @extend %hamb-row;
+        top: -8px;
+        @include transition;
+      }
+
+      &::after {
+        content: "";
+        @extend %hamb-row;
+        top: 8px;
+        @include transition;
+      }
+    }
+
+    &.open {
+      span {
+        left: -2px;
+        transform: rotate(225deg);
+
+        &::before {
+          top: 0;
+          left: 0;
+          transform: rotate(90deg);
+        }
+
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    li {
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        font-size: 18px;
+        line-height: 23px;
+        display: block;
+        text-decoration: none;
+        color: $primary;
+        @include transition;
+
+        &:hover, &.active {
+          font-weight: 500;
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Nav */
+@include breakpoint-down("md") {
+
+  .mobile-nav-active {
+    overflow: hidden;
+
+    .logo {
+      pointer-events: none;
+    }
+  }
+
+  .nav-menu {
+    ul {
+      position: fixed;
+      top: 55px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      background: $white;
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: $z-mobile-nav;
+      align-items: flex-start;
+      box-shadow: 0 0 0 500px transparentize($secondary, 0.35);
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      @include transition;
+
+      &.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      li {
+        margin: 0;
+      }
+
+      a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: 500;
+      }
+    }
+  }
+}
